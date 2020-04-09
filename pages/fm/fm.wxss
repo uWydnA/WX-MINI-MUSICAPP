@@ -1,0 +1,56 @@
+/* pages/fm/fm.wxss */
+page{
+  height: 100%;
+}
+.fm{
+  position: relative;
+  height:100%;
+}
+.mengban{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index:1;
+  -webkit-filter: blur(80rpx);
+       -moz-filter: blur(80rpx);
+        -ms-filter: blur(80rpx);    
+            filter: blur(80rpx); 
+}
+.mengban image{
+  width: 100%;
+  height: 100%;
+}
+.player{
+  position: absolute;
+  z-index: 2;
+}
+.player .banner{
+  width: 750rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin:50rpx 0;
+}
+.player .banner .post{
+  display: flex;
+  justify-content: center;
+  margin:30rpx 0;
+}
+.player .banner .post image{
+  width: 600rpx;
+  border-radius: 10rpx;
+}
+.player .banner .title{
+  font-size: 36rpx;
+  margin-bottom: 14rpx;
+  color:#fff;
+}
+.player .banner .author{
+  font-size: 24rpx;
+  color:#eee;
+}
+.player .banner .author::after{
+  content:'>';
+  padding:0 8rpx;
+}

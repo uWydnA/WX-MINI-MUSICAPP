@@ -1,0 +1,7 @@
+var toBeInt = function (data) {
+  return parseInt(data)
+}
+
+module.exports = {
+  toBeInt:toBeInt
+}

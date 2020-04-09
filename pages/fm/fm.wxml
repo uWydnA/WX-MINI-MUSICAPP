@@ -1,0 +1,19 @@
+<!--pages/fm/fm.wxml-->
+<wxs src='./fm.wxs' module='wxsFm'/>
+<view class="fm" wx:if='nowPlay'>
+	<view class="mengban">
+		<image src='{{nowPlay.picUrl}}'></image>
+	</view>
+	<view class="player">
+		<view class="banner" vw:if='nowPlay'>
+			<view class="post">
+				<image src='{{nowPlay.picUrl}}' mode='widthFix'></image>
+			</view>
+			<view class="title">{{nowPlay.name}}</view>
+			<view class="author">{{nowPlay.song.artists[0].name}}</view>
+		</view>
+    <view class="utilplayer">
+      <player duration='{{nowPlay.song.duration}}' popularity='{{nowPlay.song.popularity}}' time='{{wxsFm.setTime(nowPlay.song.duration)}}'  bindsendEvent="changeMusic"></player>
+    </view>
+	</view>
+</view>

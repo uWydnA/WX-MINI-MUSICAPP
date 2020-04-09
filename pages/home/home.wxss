@@ -1,0 +1,52 @@
+/* pages/home/home.wxss */
+page{
+  background-color: #010101;
+  color:#fff;
+}
+.banner{
+  /* height:400rpx; */
+}
+.banner swiper-item image{width: 100%;}
+
+.hotlist{
+  display: flex;
+  height:400rpx;
+  font-size:26rpx;
+}
+.hotp{padding:10rpx}
+.hotp .tuijian{
+  color:#8E8E8E;
+  font-size:24rpx;
+}
+.hotp .more{
+  border:1px solid #272727;
+  color:#fff;
+  font-size:26rpx;
+  line-height: 30rpx;
+  height:30rpx;
+  padding:10rpx 16rpx;
+  border-radius: 30rpx;
+  float:right;
+}
+.hotp .title{
+  font-weight: 600;
+  float:left;
+}
+.hotlist .hotitem{
+  padding:10rpx;
+  position: relative;
+}
+.hotlist .hotitem image{
+  width: 100%;
+  border-radius: 10rpx;
+}
+.hotlist .hotitem .playCount{
+  position: absolute;
+  right:24rpx;
+  top: 14rpx;
+  display: flex;
+  align-items:middle;
+}
+.hotlist .hotitem .playCount view{
+  line-height: 44rpx;
+}

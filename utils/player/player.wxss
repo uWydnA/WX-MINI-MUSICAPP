@@ -1,0 +1,57 @@
+/* utils/player/player.wxss */
+
+.utilplayer{
+  position: fixed;
+  width: 100%;
+  padding:30rpx;
+  box-sizing: border-box;
+  bottom:0rpx;
+}
+.playline{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.playline .time{
+  color:#BAB0B1;
+  font-size: 22rpx;
+  margin:0 20rpx;
+}
+
+.playline progress{
+  position: relative;
+  flex:1;
+}
+
+.playline text{
+  position: absolute;
+display: block;
+height: 8rpx;
+width: 8rpx;
+overflow: hidden;
+background-color: #d33a31;
+border: 12rpx solid #fff;
+border-radius: 50%;
+top: 50%;
+transform: translate3d(-50%,-50%,0);
+
+}
+.playicon{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.playicon view{
+  flex :1;
+  position: relative;
+}
+.playicon view image{
+  width: 100%;
+}
+.playicon view .popularity{
+  position: absolute;
+  left:80rpx;
+  top:36rpx;
+  color:#fff;
+  font-size:20rpx;
+}

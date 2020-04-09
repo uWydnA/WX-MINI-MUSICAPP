@@ -1,0 +1,29 @@
+<!--utils/player/player.wxml-->
+<wxs src='./player.wxs' module='player' />
+<view class="utilplayer">
+	<view class="playline">
+		<view class="time">{{player.playtime(percent,duration)}}</view>
+		<progress percent="{{percent}}" color="#d33a31" stroke-width="2">
+			<text style="left:{{percent*100}}%"></text>
+		</progress>
+		<view class="time">{{time}}</view>
+	</view>
+	<view class="playicon">
+		<view>
+			<image src='../../image/fm/aaw.png' mode='widthFix'></image>
+		</view>
+		<view bindtap='handleLike'>
+			<image src='{{likeicon}}' mode='widthFix'></image>
+		</view>
+		<view bindtap='handlePlay'>
+			<image src='{{playicon}}' mode='widthFix'></image>
+		</view>
+		<view bindtap='changeMusic'>
+			<image src='../../image/fm/q2.png' mode='widthFix'></image>
+		</view>
+		<view>
+      <view class='popularity'>{{popularity}}</view>
+			<image src='../../image/a_f.png' mode='widthFix'></image>
+		</view>
+	</view>
+</view>

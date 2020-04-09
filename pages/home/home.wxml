@@ -1,0 +1,28 @@
+<!--pages/home/home.wxml-->
+<wxs src='./home.wxs' module='home' />
+<view>
+	<swiper class="banner">
+		<swiper-item wx:for='{{bannerlist}}'>
+			<image src='{{item.picUrl}}' mode='widthFix'></image>
+		</swiper-item>
+	</swiper>
+	<view>
+		<view class="hotp">
+			<view class="tuijian">推荐歌单</view>
+			<view style='overflow:hidden'>
+				<view class="title">为你精挑细选</view>
+				<view class="more">查看更多</view>
+			</view>
+		</view>
+		<swiper class="hotlist" display-multiple-items='3'>
+			<swiper-item wx:for='{{hotlist}}' key='item.id' class='hotitem'>
+				<image src='{{item.coverImgUrl}}' mode='widthFix'></image>
+				<view>{{item.name}}</view>
+        <view class="playCount">
+        <mp-icon  icon="play" color="white" size="{{20}}"></mp-icon>
+        <view>{{home.toBeInt(item.playCount/10000)}}万</view>
+        </view>
+			</swiper-item>
+		</swiper>
+	</view>
+</view>

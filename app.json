@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/fm/fm",
+    "pages/myMusic/myMusic",
+    "pages/center/center"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1F1F1F",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#aaa",
+    "selectedColor": "#d33a31",
+    "borderStyle": "white",
+    "backgroundColor": "#1F1F1F",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "image/tb1-off.png",
+        "selectedIconPath": "image/tb1-on.png",
+        "text": "发现音乐"
+      },
+      {
+        "pagePath": "pages/fm/fm",
+        "iconPath": "image/tbfm-off.png",
+        "selectedIconPath": "image/tbfm-on.png",
+        "text": "私人Fm"
+      },
+      {
+        "pagePath": "pages/myMusic/myMusic",
+        "iconPath": "image/tb2-off.png",
+        "selectedIconPath": "image/tb2-on.png",
+        "text": "我的音乐"
+      },
+      {
+        "pagePath": "pages/center/center",
+        "iconPath": "image/tb4-off.png",
+        "selectedIconPath": "image/tb4-on.png",
+        "text": "账号"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "mp-icon": "./components/weui-miniprogram/icon/icon",
+    "player": "./utils/player/player"
+  }
+}
