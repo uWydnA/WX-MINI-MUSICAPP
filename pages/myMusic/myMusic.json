@@ -1,5 +1,4 @@
 {
-  "component": true,
-  "navigationBarTitleText":"我的音乐",
-  "usingComponents": {}
+  "usingComponents": {},
+  "navigationBarTitleText":"我的音乐"
 }

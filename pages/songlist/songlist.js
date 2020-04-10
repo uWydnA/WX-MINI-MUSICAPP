@@ -1,13 +1,15 @@
-// pages/myMusic/myMusic.js
+// pages/songlist/songlist.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userinfo: wx.getStorageSync('users') || null,
-    playlist: [],
-    isLoading: true
+    songId: '',
+    datalist: {},
+    isLoading: true,
+    showShare: true,
+    animation: null
   },
 
   /**
@@ -15,40 +17,29 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: 'http://musicapi.leanapp.cn/user/detail?uid=32953014',
+      url: `http://musicapi.leanapp.cn/playlist/detail?id=${options.id}`,
       success: res => {
         this.setData({
-          userinfo: res.data
+          datalist: res.data
         }, () => {
-          wx.setStorageSync('userinfo', this.data.userinfo)
-        })
-      }
-    })
-    wx.request({
-      url: 'http://musicapi.leanapp.cn/user/playlist?uid=32953014',
-      success: res => {
-       if(res.data.code===200){
-        this.setData({
-          playlist: res.data.playlist,
-        },()=>{
-          console.log(this.data.playlist)
-          setTimeout(()=>{
+          setTimeout(() => {
             this.setData({
               isLoading: false
             })
-          },1000)
+          }, 1000)
         })
-       }
       }
     })
-
+    this.setData({
+      songId: options.id
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
+  onReady: function (options) {
+    this.animation = wx.createAnimation()
   },
 
   /**
@@ -92,14 +83,21 @@ Page({
   onShareAppMessage: function () {
 
   },
-  handleSongList(ev){
-    wx.navigateTo({
-      url: `/pages/songlist/songlist?id=${ev.currentTarget.dataset.id}`,
-    })
-  },
-  goToFm(){
-    wx.switchTab({
-      url: '/pages/fm/fm',
+  showShareModal() {
+    this.setData({
+      showShare: !this.data.showShare
+    }, () => {
+      if (this.data.showShare) {
+        this.animation.translate(0, 0).step()
+        this.setData({
+          animation: this.animation.export()
+        })
+      } else {
+        this.animation.translate(0, -200).step()
+        this.setData({
+          animation: this.animation.export()
+        })
+      }
     })
   }
 })

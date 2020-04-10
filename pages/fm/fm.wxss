@@ -1,56 +1,75 @@
 /* pages/fm/fm.wxss */
-page{
+page {
+  height: 100%;
+  background-color: #010101;
+}
+
+.fm {
+  position: relative;
   height: 100%;
 }
-.fm{
-  position: relative;
-  height:100%;
-}
-.mengban{
+
+.mengban {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index:1;
+  z-index: 1;
   -webkit-filter: blur(80rpx);
-       -moz-filter: blur(80rpx);
-        -ms-filter: blur(80rpx);    
-            filter: blur(80rpx); 
+  -moz-filter: blur(80rpx);
+  -ms-filter: blur(80rpx);
+  filter: blur(80rpx);
 }
-.mengban image{
+
+.mengban image {
   width: 100%;
   height: 100%;
 }
-.player{
+
+.player {
   position: absolute;
   z-index: 2;
 }
-.player .banner{
+
+.player .banner {
   width: 750rpx;
   display: flex;
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  margin:50rpx 0;
+  margin: 50rpx 0;
 }
-.player .banner .post{
+
+.player .banner .post {
   display: flex;
   justify-content: center;
-  margin:30rpx 0;
+  margin: 30rpx 0;
 }
-.player .banner .post image{
+
+.player .banner .post image {
   width: 600rpx;
   border-radius: 10rpx;
 }
-.player .banner .title{
+
+.player .banner .title {
   font-size: 36rpx;
   margin-bottom: 14rpx;
-  color:#fff;
+  color: #fff;
 }
-.player .banner .author{
+
+.player .banner .author {
   font-size: 24rpx;
-  color:#eee;
+  color: #eee;
 }
-.player .banner .author::after{
-  content:'>';
-  padding:0 8rpx;
+
+.player .banner .author::after {
+  content: '>';
+  padding: 0 8rpx;
+}
+
+.utilloading {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  top: 40%;
 }

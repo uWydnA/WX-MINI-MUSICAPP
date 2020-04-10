@@ -61,6 +61,21 @@
 					"id": -1,
 					"name": "pages/fm/fm",
 					"pathName": "pages/fm/fm",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/myMusic/myMusic",
+					"pathName": "pages/myMusic/myMusic",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "pages/songlist/songlist",
+					"pathName": "pages/songlist/songlist",
+					"query": "id=2750978184",
 					"scene": null
 				}
 			]

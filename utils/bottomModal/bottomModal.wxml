@@ -1,0 +1,40 @@
+<!--utils/bottomModal/bottomModal.wxml-->
+<view class="share">
+	<view class="header">
+		<view style='margin:0 40rpx 20rpx 40rpx'>分享</view>
+		<swiper display-multiple-items='3'>
+			<swiper-item>
+				<view class="shareicon">
+					<view class='iconbck'>
+						<image src='../../image/agb.png'></image>
+					</view>
+					<view>微信朋友圈</view>
+				</view>
+			</swiper-item>
+			<swiper-item>
+				<view class="shareicon">
+					<view class='iconbck'>
+						<image src='../../image/age.png'></image>
+					</view>
+					<view>QQ好友</view>
+				</view>
+			</swiper-item>
+			<swiper-item>
+				<view class='shareicon'>
+					<view class="iconbck">
+						<image src='../../image/agf.png'></image>
+					</view>
+					<view>QQ空间</view>
+				</view>
+			</swiper-item>
+			<swiper-item>
+				<view class='shareicon'>
+					<view class="iconbck">
+						<image src='../../image/agg.png'></image>
+					</view>
+					<view>微信好友</view>
+				</view>
+			</swiper-item>
+		</swiper>
+	</view>
+</view>

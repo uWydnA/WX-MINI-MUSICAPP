@@ -1,1 +1,84 @@
 /* pages/myMusic/myMusic.wxss */
+page {
+  box-sizing: border-box;
+  height: 100%;
+  background-image: url(http://yolandy.com/apiimg/bcg1.jpg) ;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding:0 20rpx;
+  color: #fff
+}
+
+.userinfo {
+  display: flex;
+  padding: 20rpx 10rpx;
+}
+
+.userinfo .userPhoto {
+  margin-right:30rpx;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+}
+.userinfo .usertitle{
+  margin:10rpx 0;
+}
+.userinfo .follow{
+  margin:10rpx 0;
+  font-size:22rpx;
+}
+.usernavbar {
+  display: flex;
+  width: 100%;
+  margin:40rpx 0;
+  font-size:26rpx;
+}
+.usernavbar view{
+  flex:1;
+  text-align: center;
+}
+.usernavbar image{
+  width: 40%;
+  margin-bottom:10rpx;
+}
+
+.musiclist{
+
+}
+.musiclist .playlist{
+  display: flex;
+  flex-wrap: wrap;
+  padding:30rpx 0;
+  justify-content: space-between;
+}
+.musiclist .playlist .playitem{
+  position: relative;
+  display: flex;
+  width: 50%;
+  margin:10rpx 0;
+}
+.musiclist .playlist .playitem image{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 10rpx;
+  margin-right:20rpx;
+}
+.musiclist .playlist .playitem .playcont{
+  width: 160rpx;
+  font-size: 24rpx;
+  padding:20rpx 0 ;
+}
+.musiclist .playlist .playitem .playcont .count{
+  color:#696969;
+  font-size:22rpx;
+  margin:10rpx 0;
+}
+.utilloading {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  top: 40%;
+}

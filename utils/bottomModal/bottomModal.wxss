@@ -1,0 +1,35 @@
+/* utils/bottomModal/bottomModal.wxss */
+.share {
+  padding:40rpx 0;
+  box-sizing: border-box;
+  height: 400rpx;
+  background-color: #141414;
+  border-radius: 30rpx;
+  width: 750rpx;
+  color: #D8D8D8
+}
+
+.shareicon {
+  text-align: center;
+  margin:30rpx 0;
+}
+
+.iconbck {
+  padding: 20rpx;
+  background: #2E2E2E;
+  border-radius: 50%;
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0 auto;
+
+}
+
+
+.iconbck image {
+  width: 100%;
+  height: 100%;
+}
+
+.shareiconlist {
+  display: flex;
+}

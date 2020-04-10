@@ -21,14 +21,14 @@ Component({
   data: {
     percent: 0,
     likeicon: '../../image/fm/py.png',
-    playicon: '../../image/fm/q8.png'
+    playicon: '../../image/fm/q8.png',
+    isPlay:false,
   },
   /**
    * 组件的方法列表
    */
   methods: {
     changeMusic() {
-      console.log(this.properties.time)
       this.triggerEvent("sendEvent");
     },
     handleLike() {
@@ -36,20 +36,35 @@ Component({
         likeicon: this.data.likeicon === '../../image/fm/py.png' ? '../../image/fm/q0.png' : '../../image/fm/py.png'
       })
     },
+    touchClick (ev) {
+      // console.log('click',ev.changedTouches[0])
+    },
+    touchMove (ev) {
+      // console.log('move',ev.changedTouches[0])
+      // this.setData({
+      //   percent:(ev.changedTouches[0].pageX-63)*496/750
+      // },()=>{
+      //   console.log('percent',this.data.percent)
+      // })
+    },
     handlePlay() {
       if (this.data.playicon === '../../image/fm/q8.png') {
+        this.triggerEvent("playOrNo",true);
         this.t = setInterval(() => {
-          if(this.data.percent===1){
+          if(this.data.percent>=100){
+            this.setData({
+              percent:100,
+              playicon:'../../image/fm/q8.png'
+            })
             clearInterval(this.t)
           }else{
             this.setData({
-              percent: this.data.percent + (1/(this.properties.duration/1000))
-            },()=>{
-              console.log('percent',this.data.percent)
+              percent: this.data.percent + (1/(this.properties.duration/1000)*100)
             })
           }
-        }, 10)
+        }, 1000)
       } else {
+        this.triggerEvent("playOrNo",false);
         clearInterval(this.t)
       }
       this.setData({

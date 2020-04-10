@@ -1,10 +1,11 @@
 var setTime = function (data) {
- if(data!=undefined){
-  var fen = ((data / 1000 / 60) + '').split('.')[0] <= 9 ? '0' + ((data / 1000 / 60) + '').split('.')[0] : ((data / 1000 / 60) + '').split('.')[0]
-  var miao = ((data / 1000 / 60) + '').split('.')[1].substring(0, 2)
-  return fen + ':' + miao
- }
+  data = parseInt(data/1000)
+  if (data != undefined) {
+    var fen = (parseInt((data / 60)) + '') <= 9 ? '0' + (parseInt((data / 60)) + '') : (parseInt((data / 60)) + '')
+    var miao = data % 60 <= 9 ? '0' + data % 60 : data % 60
+    return fen + ':' + miao
+  }
 }
 module.exports = {
-  setTime:setTime
+  setTime: setTime
 }

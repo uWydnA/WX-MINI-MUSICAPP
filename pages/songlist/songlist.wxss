@@ -1,0 +1,166 @@
+/* pages/songlist/songlist.wxss */
+page {
+  box-sizing: border-box;
+  height: 100%;
+  background-color: #010101;
+  color:#fff;
+  background-image: url(http://yolandy.com/apiimg/bcg1.jpg) ;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+  height: 100%;
+  position: absolute;
+  color: #fff;
+  
+  z-index: 1;
+}
+.songheader{
+  position: relative;
+
+}
+.mengban {
+  -webkit-filter: blur(6rpx);
+  -moz-filter: blur(6rpx);
+  -ms-filter: blur(6rpx);
+  filter: blur(6rpx);
+}
+.songheader{
+  height:450rpx;
+}
+.songheader .headercont{
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+  position: absolute;
+  z-index:2;
+  display: flex;
+  padding:40rpx;
+ 
+
+}
+.songheader .headercont .left{
+  position: relative;
+  margin-right: 40rpx;
+}
+.songheader .headercont .left image{
+  width: 240rpx;
+  height:240rpx;
+  border-radius: 10rpx;
+}
+.songheader .headercont .left .playcount{
+  position: absolute;
+  left: 120rpx;
+  top:10rpx;
+  font-size:26rpx;
+}
+.songheader .headercont .right{
+
+}
+.songheader .headercont .right .title{
+  margin:30rpx 0;
+}
+.songheader .headercont .right .rightcont{
+  display: flex;
+  align-items: middle;
+}
+.songheader .headercont .right .rightcont view {
+  margin-left:10rpx;
+  font-size: 24rpx;
+  line-height: 60rpx;
+}
+.songheader .headercont .right .rightcont view::after{
+  content: '>';
+  padding:0 4rpx;
+}
+.songheader .headercont .right image{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+}
+.headernavbar {
+  display: flex;
+  width: 100%;
+  margin:40rpx 0;
+  font-size:26rpx;
+  position: absolute;
+  top:280rpx;
+  z-index:3;
+}
+.headernavbar view{
+  flex:1;
+  text-align: center;
+}
+.headernavbar image{
+  width: 30%;
+  margin-bottom:10rpx;
+}
+.songcont{
+  /* margin-top:-20rpx; */
+  padding:40rpx 20rpx;
+  border-radius: 50rpx;
+  background-color: #010101;
+}
+.songcont .header{
+}
+.songcont .header image{
+  width: 70rpx;
+  height: 70rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.songcont .header text{
+  line-height: 30rpx;
+
+}
+.songlist {
+
+}
+.songlist .listitem{
+  display: flex;
+  margin:40rpx 6rpx;
+}
+.songlist .listitem .left{
+  width: 80rpx;
+  text-align: center;
+  margin-right:10rpx;
+  line-height: 76rpx;
+  color:#A5A5A5;
+}
+.songlist .listitem .right{
+  
+}
+.songlist .listitem .right .title{
+  line-height: 30rpx;
+}
+.songlist .listitem .right .ar{
+  font-size: 22rpx;
+  color:#9B9B9B;
+  line-height: 30rpx;
+  margin-top:16rpx;
+}
+.utilloading {
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  top: 40%;
+}
+.shareModal{
+  position: fixed;
+  bottom: -400rpx;
+  transition: 400ms linear 0ms;
+  transform: translate(0px,0px);
+  transition-property: transform;
+  transform-origin: 50% 50% 0;
+  -webkit-transition: 400ms linear 0ms;
+  -webkit-transform: translate(0px,0px);
+  -webkit-transition-property: transform;
+  -webkit-transform-origin: 50% 50% 0;
+  
+}

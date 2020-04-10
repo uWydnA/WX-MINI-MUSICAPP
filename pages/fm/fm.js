@@ -7,7 +7,10 @@ Page({
   data: {
     playList:[],
     nowPlay:{},
-    nowNum:wx.getStorageSync('nowNum')||0
+    nowNum:wx.getStorageSync('nowNum')||0,
+    isLoading:true,
+    isPlay:true,
+    src:'http://yolandy.com/mp3/ANZA.mp3'
   },
 
   /**
@@ -21,6 +24,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+    this.audioCtx = wx.createAudioContext('myAudio')
     wx.request({
       url: 'http://musicapi.leanapp.cn/personalized/newsong',
       success:res=>{
@@ -30,9 +34,8 @@ Page({
           },()=>{
             let nowplay = wx.getStorageSync('prevPlay')||this.data.playList[this.data.nowNum]
             this.setData({
-              nowPlay:nowplay
-            },()=>{
-              console.log(this.data.nowPlay)
+              nowPlay:nowplay,
+              isLoading:false
             })
           })
         }else{
@@ -83,14 +86,29 @@ Page({
   onShareAppMessage: function () {
 
   },
+  audioPlay: function () {
+    this.audioCtx.play()
+  },
+  audioPause: function () {
+    this.audioCtx.pause()
+  },
+  playmusic (data) {
+    if(data.detail){
+      this.audioPlay()
+    }else{
+      this.audioPause()
+    }
+  },
   changeMusic () {
     this.setData({
-      nowNum:this.data.nowNum===this.data.playList.length-1?0:this.data.nowNum+1
+      nowNum:this.data.nowNum===this.data.playList.length-1?0:this.data.nowNum+1,
+      isLoading:true
     },()=>{
       wx.setStorageSync('prevPlay', this.data.playList[this.data.nowNum])
       wx.setStorageSync('nowNum', this.data.nowNum)
       this.setData({
-        nowPlay:this.data.playList[this.data.nowNum]
+        nowPlay:this.data.playList[this.data.nowNum],
+        isLoading:false
       })
     })
   }

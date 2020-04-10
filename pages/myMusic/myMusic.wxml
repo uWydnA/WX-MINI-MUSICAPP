@@ -1,2 +1,44 @@
 <!--pages/myMusic/myMusic.wxml-->
-<text>pages/myMusic/myMusic.wxml</text>
+<loading class='utilloading' wx:if='{{isLoading}}' />
+<view hidden="{{isLoading}}">
+	<view class="userinfo" wx:if='{{userinfo}}'>
+		<image class="userPhoto" src='http://yolandy.com/apiimg/userPhoto3.jpg'></image>
+		<view>
+			<view class="usertitle">{{userinfo.profile.signature}}</view>
+			<view class="follow">
+				<text>关注：{{userinfo.profile.followeds}}</text>
+				<text style='margin-left:10rpx'>粉丝：{{userinfo.profile.follows}}</text>
+			</view>
+		</view>
+	</view>
+	<view class="usernavbar">
+		<view>
+			<image src='../../image/w5.png' mode='widthFix'></image>
+			<view>本地音乐</view>
+		</view>
+		<view bindtap="goToFm">
+			<image src='../../image/y9.png' mode='widthFix'></image>
+			<view>我的电台</view>
+		</view>
+		<view>
+			<image src='../../image/w7.png' mode='widthFix'></image>
+			<view>我的收藏</view>
+		</view>
+		<view>
+			<image src='../../image/wd.png' mode='widthFix'></image>
+			<view>分享歌单</view>
+		</view>
+	</view>
+	<view class="musiclist">
+		<view>我的歌单</view>
+		<view class="playlist">
+			<view wx:for='{{playlist}}' wx:key='id' class="playitem" bindtap='handleSongList' data-id='{{item.id}}'>
+				<image src='{{item.coverImgUrl}}' mode='widthFix'></image>
+				<view class='playcont'>
+					<view class="title">{{item.name}}</view>
+					<view class="count">{{item.trackCount}}首</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

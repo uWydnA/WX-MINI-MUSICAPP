@@ -3,7 +3,8 @@
     "pages/home/home",
     "pages/fm/fm",
     "pages/myMusic/myMusic",
-    "pages/center/center"
+    "pages/center/center",
+    "pages/songlist/songlist"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -46,6 +47,8 @@
   "sitemapLocation": "sitemap.json",
   "usingComponents": {
     "mp-icon": "./components/weui-miniprogram/icon/icon",
-    "player": "./utils/player/player"
+    "player": "./utils/player/player",
+    "loading": "./utils/loading/loading",
+    "share":"./utils/bottomModal/bottomModal"
   }
 }

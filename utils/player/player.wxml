@@ -1,10 +1,11 @@
 <!--utils/player/player.wxml-->
 <wxs src='./player.wxs' module='player' />
+
 <view class="utilplayer">
 	<view class="playline">
 		<view class="time">{{player.playtime(percent,duration)}}</view>
 		<progress percent="{{percent}}" color="#d33a31" stroke-width="2">
-			<text style="left:{{percent*100}}%"></text>
+			<text class="dot" bindtouchmove='touchMove' bindtouchstart='touchClick' style="left:{{percent}}%"></text>
 		</progress>
 		<view class="time">{{time}}</view>
 	</view>
