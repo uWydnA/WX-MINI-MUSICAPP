@@ -4,7 +4,7 @@ page {
   height: 100%;
   background-color: #010101;
   color:#fff;
-  background-image: url(http://yolandy.com/apiimg/bcg1.jpg) ;
+  background-image: url(https://ftp.bmp.ovh/imgs/2020/04/8bc8d1719fdd46a4.jpg) ;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -59,9 +59,7 @@ page {
   top:10rpx;
   font-size:26rpx;
 }
-.songheader .headercont .right{
 
-}
 .songheader .headercont .right .title{
   margin:30rpx 0;
 }
@@ -106,8 +104,7 @@ page {
   border-radius: 50rpx;
   background-color: #010101;
 }
-.songcont .header{
-}
+
 .songcont .header image{
   width: 70rpx;
   height: 70rpx;
@@ -118,9 +115,7 @@ page {
   line-height: 30rpx;
 
 }
-.songlist {
 
-}
 .songlist .listitem{
   display: flex;
   margin:40rpx 6rpx;
@@ -132,9 +127,7 @@ page {
   line-height: 76rpx;
   color:#A5A5A5;
 }
-.songlist .listitem .right{
-  
-}
+
 .songlist .listitem .right .title{
   line-height: 30rpx;
 }

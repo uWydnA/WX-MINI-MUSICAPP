@@ -1,5 +1,5 @@
 <!--utils/bottomModal/bottomModal.wxml-->
-<view class="share">
+<view class="share" >
 	<view class="header">
 		<view style='margin:0 40rpx 20rpx 40rpx'>分享</view>
 		<swiper display-multiple-items='3'>

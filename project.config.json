@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"preloadBackgroundData": false,
@@ -76,6 +76,13 @@
 					"name": "pages/songlist/songlist",
 					"pathName": "pages/songlist/songlist",
 					"query": "id=2750978184",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "pages/thisMusic/thisMusic",
+					"pathName": "pages/thisMusic/thisMusic",
+					"query": "ids=1416387774&songlist=2750978184",
 					"scene": null
 				}
 			]

@@ -2,9 +2,19 @@
 page{
   background-color: #010101;
   color:#fff;
+  background-image: url(https://ftp.bmp.ovh/imgs/2020/04/8bc8d1719fdd46a4.jpg) ;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 .banner{
   /* height:400rpx; */
+  width: 94%;
+  height: 260rpx;
+  margin:30rpx auto;
+  border-radius: 30rpx;
+  overflow: hidden;
 }
 .banner swiper-item image{width: 100%;}
 
@@ -19,7 +29,7 @@ page{
   font-size:24rpx;
 }
 .hotp .more{
-  border:1px solid #272727;
+  border:1px solid #ccc;
   color:#fff;
   font-size:26rpx;
   line-height: 30rpx;

@@ -12,6 +12,9 @@ Component({
     },
     duration:{
       type:Number
+    },
+    isPlayed:{
+      type:Boolean
     }
   },
 
@@ -29,6 +32,11 @@ Component({
    */
   methods: {
     changeMusic() {
+      clearInterval(this.t)
+      this.setData({
+        percent:0,
+        playicon:'../../image/fm/q8.png'
+      })
       this.triggerEvent("sendEvent");
     },
     handleLike() {

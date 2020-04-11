@@ -1,4 +1,4 @@
-/* pages/fm/fm.wxss */
+/* pages/thisMusic/thisMusic.wxss */
 page {
   height: 100%;
   background-color: #010101;
@@ -44,11 +44,16 @@ page {
   display: flex;
   justify-content: center;
   margin: 30rpx 0;
+  position: relative;
 }
 
 .player .banner .post image {
   width: 600rpx;
   border-radius: 10rpx;
+  border-radius: 50%;
+}
+.songActive {
+  animation: headRotate 10s linear infinite
 }
 
 .player .banner .title {
@@ -73,4 +78,10 @@ page {
   right: 0;
   z-index: 3;
   top: 40%;
+}
+
+@keyframes headRotate{
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(180deg);}
+  100% {transform: rotate(360deg);}
 }

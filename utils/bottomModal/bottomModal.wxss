@@ -12,6 +12,7 @@
 .shareicon {
   text-align: center;
   margin:30rpx 0;
+  font-size: 28rpx;
 }
 
 .iconbck {
@@ -21,6 +22,7 @@
   width: 80rpx;
   height: 80rpx;
   margin: 0 auto;
+  margin-bottom: 16rpx;
 
 }
 

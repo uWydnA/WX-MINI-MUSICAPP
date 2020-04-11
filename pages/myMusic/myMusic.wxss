@@ -2,7 +2,7 @@
 page {
   box-sizing: border-box;
   height: 100%;
-  background-image: url(http://yolandy.com/apiimg/bcg1.jpg) ;
+  background-image: url(https://ftp.bmp.ovh/imgs/2020/04/8bc8d1719fdd46a4.jpg) ;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -44,9 +44,7 @@ page {
   margin-bottom:10rpx;
 }
 
-.musiclist{
 
-}
 .musiclist .playlist{
   display: flex;
   flex-wrap: wrap;

@@ -17,11 +17,12 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: `http://musicapi.leanapp.cn/playlist/detail?id=${options.id}`,
+      url: `https://musicapi.leanapp.cn/playlist/detail?id=${options.id}`,
       success: res => {
         this.setData({
           datalist: res.data
         }, () => {
+          console.log(this.data.datalist)
           setTimeout(() => {
             this.setData({
               isLoading: false
@@ -83,10 +84,26 @@ Page({
   onShareAppMessage: function () {
 
   },
+  cancelShare () {
+   
+    this.setData({
+      showShare: true
+    })
+    this.animation.translate(0, 0).step()
+    this.setData({
+      animation: this.animation.export()
+    })
+  },
+  goToThisMusic(ev) {
+    wx.navigateTo({
+      url: `/pages/thisMusic/thisMusic?ids=${ev.currentTarget.dataset.id}&songlist=${this.data.datalist.playlist.id}`,
+    })
+  },
   showShareModal() {
     this.setData({
       showShare: !this.data.showShare
     }, () => {
+      console.log(this.data.showShare)
       if (this.data.showShare) {
         this.animation.translate(0, 0).step()
         this.setData({

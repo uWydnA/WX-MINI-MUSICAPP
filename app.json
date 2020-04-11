@@ -3,8 +3,8 @@
     "pages/home/home",
     "pages/fm/fm",
     "pages/myMusic/myMusic",
-    "pages/center/center",
-    "pages/songlist/songlist"
+    "pages/songlist/songlist",
+    "pages/thisMusic/thisMusic"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -35,12 +35,6 @@
         "iconPath": "image/tb2-off.png",
         "selectedIconPath": "image/tb2-on.png",
         "text": "我的音乐"
-      },
-      {
-        "pagePath": "pages/center/center",
-        "iconPath": "image/tb4-off.png",
-        "selectedIconPath": "image/tb4-on.png",
-        "text": "账号"
       }
     ]
   },
@@ -49,6 +43,6 @@
     "mp-icon": "./components/weui-miniprogram/icon/icon",
     "player": "./utils/player/player",
     "loading": "./utils/loading/loading",
-    "share":"./utils/bottomModal/bottomModal"
+    "share": "./utils/bottomModal/bottomModal"
   }
 }

@@ -7,10 +7,10 @@ Page({
   data: {
     playList:[],
     nowPlay:{},
-    nowNum:wx.getStorageSync('nowNum')||0,
+    nowNum:0,
     isLoading:true,
     isPlay:true,
-    src:'http://yolandy.com/mp3/ANZA.mp3'
+    src:''
   },
 
   /**
@@ -26,7 +26,7 @@ Page({
   onReady: function () {
     this.audioCtx = wx.createAudioContext('myAudio')
     wx.request({
-      url: 'http://musicapi.leanapp.cn/personalized/newsong',
+      url: 'https://musicapi.leanapp.cn/personalized/newsong',
       success:res=>{
         if(res.data.code===200){
           this.setData({
@@ -36,6 +36,20 @@ Page({
             this.setData({
               nowPlay:nowplay,
               isLoading:false
+            },()=>{
+              this.setData({
+                src:`https://music.163.com/song/media/outer/url?id=${this.data.nowPlay.id}.mp3`
+              })
+              wx.request({
+                url: `https://musicapi.leanapp.cn/song/detail?ids=${this.data.nowPlay.id}`,
+                success:res=>{
+                  if(res.data.code===200){
+                    this.setData({
+                      privileges:res.data.privileges[0],
+                    })
+                  }
+                }
+              })
             })
           })
         }else{
@@ -100,6 +114,7 @@ Page({
     }
   },
   changeMusic () {
+    this.playmusic({detail:false})
     this.setData({
       nowNum:this.data.nowNum===this.data.playList.length-1?0:this.data.nowNum+1,
       isLoading:true
@@ -109,6 +124,10 @@ Page({
       this.setData({
         nowPlay:this.data.playList[this.data.nowNum],
         isLoading:false
+      },()=>{
+        this.setData({
+          src:`https://music.163.com/song/media/outer/url?id=${this.data.nowPlay.id}.mp3`
+        })
       })
     })
   }

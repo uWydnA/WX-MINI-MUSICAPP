@@ -6,7 +6,8 @@ Page({
    */
   data: {
     bannerlist:[],
-    hotlist:[]
+    hotlist:[],
+    fmlist:[]
   },
 
   /**
@@ -24,7 +25,7 @@ Page({
       title: '加载中',
     })
     wx.request({
-      url: 'http://musicapi.leanapp.cn/banner',
+      url: 'https://musicapi.leanapp.cn/banner',
       success:res=>{
         if(res.data.code===200){
           console.log(res.data.banners)
@@ -35,7 +36,7 @@ Page({
       }
     })
     wx.request({
-      url: 'http://musicapi.leanapp.cn/top/playlist',
+      url: 'https://musicapi.leanapp.cn/top/playlist',
       success:res=>{
         if(res.data.code===200){
           wx.hideLoading()
@@ -47,6 +48,16 @@ Page({
           })
         }else{
          
+        }
+      }
+    })
+    wx.request({
+      url: 'https://musicapi.leanapp.cn/personalized/djprogram',
+      success:res=>{
+        if(res.data.code===200){
+          this.setData({
+            fmlist:res.data.result
+          })
         }
       }
     })
@@ -92,5 +103,10 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  goToSongList(ev){
+    wx.navigateTo({
+      url: `/pages/songlist/songlist?id=${ev.currentTarget.dataset.id}`,
+    })
   }
 })

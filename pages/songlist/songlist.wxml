@@ -4,7 +4,7 @@
 <share />
 </view>
 <loading class='utilloading' wx:if='{{isLoading}}' />
-<view hidden="{{isLoading}}" wx:if='datalist'>
+<view hidden="{{isLoading}}" wx:if='datalist' bindtap='cancelShare'>
 		<view class="mengban">
 		</view>
 	<view class='songheader'>
@@ -13,7 +13,7 @@
 				<image src='{{datalist.playlist.coverImgUrl}}'></image>
 				<view class="playcount">
 					<mp-icon icon="play" color="white" size="{{20}}"></mp-icon>
-					<text>{{datalist.playlist.playCount>10000?home.toBeInt(datalist.playlist.playCount/10000)+'万':datalist.playlist.playCount}}</text>
+					<text>{{home.toBeInt(datalist.playlist.playCount)}}</text>
 				</view>
 
 			</view>
@@ -30,7 +30,7 @@
 				<image src='../../image/w3.png' mode='widthFix'></image>
 				<view>评论</view>
 			</view>
-			<view bindtap='showShareModal'> 
+			<view catchtap='showShareModal'> 
 				<image src='../../image/wd.png' mode='widthFix'></image>
 				<view>分享</view>
 			</view>
@@ -54,7 +54,7 @@
 		</view>
 	</view>
 	<view class='songlist'>
-		<view class="listitem" wx:for='{{datalist.playlist.tracks}}'>
+		<view class="listitem" wx:for='{{datalist.playlist.tracks}}' wx:key='id' bindtap='goToThisMusic' data-id='{{item.id}}'>
 			<view class="left">{{index+1}}</view>
 		<view class="right">
 				<view class='title'>{{item.name}}</view>

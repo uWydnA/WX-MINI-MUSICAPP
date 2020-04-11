@@ -15,7 +15,7 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: 'http://musicapi.leanapp.cn/user/detail?uid=32953014',
+      url: 'https://musicapi.leanapp.cn/user/detail?uid=32953014',
       success: res => {
         this.setData({
           userinfo: res.data
@@ -25,7 +25,7 @@ Page({
       }
     })
     wx.request({
-      url: 'http://musicapi.leanapp.cn/user/playlist?uid=32953014',
+      url: 'https://musicapi.leanapp.cn/user/playlist?uid=32953014',
       success: res => {
        if(res.data.code===200){
         this.setData({

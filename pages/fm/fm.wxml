@@ -5,7 +5,9 @@
 </view>
 <loading class='utilloading' wx:if='{{isLoading}}'/>
 <view wx:else style='height:100%'>
+
 	<view class="fm" wx:if='nowPlay'>
+
 		<view class="mengban">
 			<image src='{{nowPlay.picUrl}}'></image>
 		</view>
@@ -18,7 +20,7 @@
 				<view class="author">{{nowPlay.song.artists[0].name}}</view>
 			</view>
 			<view class="utilplayer">
-				<player duration='{{nowPlay.song.duration}}' popularity='{{nowPlay.song.popularity}}' time='{{wxsFm.setTime(nowPlay.song.duration)}}'  bindsendEvent="changeMusic" bindplayOrNo='playmusic'></player>
+				<player isPlayed='{{isPlayed}}' duration='{{nowPlay.song.duration}}' popularity='{{privileges.pl>999?"999+":privileges.pl}}' time='{{wxsFm.setTime(nowPlay.song.duration)}}'  bindsendEvent="changeMusic" bindplayOrNo='playmusic'></player>
 			</view>
 		</view>
 	</view>
